@@ -3,10 +3,7 @@ provider "aws" {
 }
 
 resource "aws_instance" "demo-instance" {
-  ami           = "ami-08ee2516c7709ea48"
-  instance_type = "t2.micro"
-  tags = {
-    Name        = "demo-1"
-    Environment = "develop"
-  }
+  ami           = var.ami_id
+  instance_type = var.instance_type
+  tags          = var.tags
 }
