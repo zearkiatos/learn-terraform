@@ -1,5 +1,5 @@
 module "app-demo" {
-  source        = "./modules/instance"
+  source        = "github.com/zearkiatos/remote-modules-terraform/modules/instance"
   ami_id        = var.ami_id
   instance_type = var.instance_type
   tags          = var.tags
