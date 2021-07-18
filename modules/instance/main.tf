@@ -37,8 +37,9 @@ resource "aws_instance" "demo-instance" {
     connection {
       type        = "ssh"
       user        = "centos"
-      private_key = "${file("./keys/packer-key")}"
+      private_key = file("./keys/packer-key")
       host        = self.public_ip
     }
+    inline = ["echo hello", "docker run -it -d -p 80:80 caprilespe/hello-terraform:v1"]
   }
 }
